@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ajout Etudiant</title>
+</head>
+<body>
+<h1>Ajout Etudiant</h1>
+<h2 th:text="${course.name}"></h2>
+<form th:action="@{/course/{id}/add-student(id=${course.id})}" method="post" th:object="${student}">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required="required" th:field="*{name}" />
+    <br/>
+    <label for="grade">Grade:</label>
+    <input type="text" id="grade" name="grade" required="required" th:field="*{grade}" />
+    <br/>
+    <button type="submit">Add Student</button>
+</form>
+</body>
+</html>
